@@ -302,7 +302,8 @@ def process_customer_message(
                 "response": (
                     "Please tell me which item you want to change "
                     "the order to."
-                )
+                ),
+                "order_id": order_id,
             }
 
         result = change_order(order_id, new_item)
