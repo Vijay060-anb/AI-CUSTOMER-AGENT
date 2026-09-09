@@ -1,0 +1,30 @@
+message,expected_intent,ml_intent,ml_confidence,ml_correct,hybrid_intent,hybrid_confidence,routing_method,ai_used,hybrid_correct,fixed_by_hybrid
+I want to cancel my order,cancel_order,cancel_order,0.5144,True,cancel_order,0.99,AI,True,True,False
+Can you cancel order 12345 for me?,cancel_order,cancel_order,0.4981,True,cancel_order,0.99,AI,True,True,False
+I accidentally ordered the wrong item,change_order,change_shipping_address,0.1345,False,change_order,0.97,AI,True,True,True
+I need to add another product to my order,change_order,change_order,0.3963,True,change_order,0.97,AI,True,True,False
+Where is my package right now?,track_order,delivery_period,0.1559,False,track_order,0.99,AI,True,True,True
+Can you tell me where my order is?,track_order,delivery_period,0.1471,False,track_order,0.99,AI,True,True,True
+When will my order arrive?,delivery_period,delivery_period,0.9619,True,delivery_period,0.9619,ML,False,True,False
+How long does shipping usually take?,delivery_period,check_refund_policy,0.43,False,delivery_period,0.98,AI,True,True,True
+What delivery methods do you offer?,delivery_options,delivery_options,0.9712,True,delivery_options,0.9712,ML,False,True,False
+I forgot my password,recover_password,recover_password,0.5984,True,recover_password,0.99,AI,True,True,False
+I can't log into my account because I forgot my password,recover_password,recover_password,0.7438,True,recover_password,0.99,AI,True,True,False
+I want to change the address for my delivery,change_shipping_address,change_shipping_address,0.9714,True,change_shipping_address,0.9714,ML,False,True,False
+I need to update my shipping address,change_shipping_address,change_shipping_address,0.9523,True,change_shipping_address,0.9523,ML,False,True,False
+I want my money back,get_refund,get_refund,0.7575,True,get_refund,0.98,AI,True,True,False
+How do I request a refund?,get_refund,get_refund,0.4885,True,get_refund,0.99,AI,True,True,False
+Where is my refund?,track_refund,track_refund,0.2374,True,track_refund,0.99,AI,True,True,False
+Has my refund been processed yet?,track_refund,track_refund,0.3608,True,track_refund,0.98,AI,True,True,False
+What payment methods can I use?,check_payment_methods,check_payment_methods,0.8496,True,check_payment_methods,0.8496,ML,False,True,False
+My payment isn't going through,payment_issue,payment_issue,0.2304,True,payment_issue,0.97,AI,True,True,False
+I want to complain about your service,complaint,review,0.4918,False,complaint,0.99,AI,True,True,True
+I want to leave feedback about a product,review,review,0.993,True,review,0.993,ML,False,True,False
+How do I create an account?,create_account,create_account,0.5434,True,create_account,0.99,AI,True,True,False
+I want to delete my account,delete_account,delete_account,0.9123,True,delete_account,0.9123,ML,False,True,False
+How can I update my account information?,edit_account,edit_account,0.5801,True,edit_account,0.97,AI,True,True,False
+I want to speak with a real person,contact_human_agent,contact_human_agent,0.9419,True,contact_human_agent,0.9419,ML,False,True,False
+How can I contact customer support?,contact_customer_service,contact_customer_service,0.9877,True,contact_customer_service,0.9877,ML,False,True,False
+How do I get my invoice?,get_invoice,get_invoice,0.8493,True,get_invoice,0.8493,ML,False,True,False
+I need to check an invoice,check_invoice,check_invoice,0.656,True,check_invoice,0.97,AI,True,True,False
+Can I get a refund for this purchase?,check_refund_policy,get_refund,0.5621,False,check_refund_policy,0.97,AI,True,True,True

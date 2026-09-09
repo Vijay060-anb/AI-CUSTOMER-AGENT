@@ -1,0 +1,33 @@
+# Environment
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+data/logs/
+
+# Local model/cache files
+*.joblib
+
+# Streamlit
+.streamlit/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Processed datasets
+data/processed/
+
+# Processed datasets
+data/processed/

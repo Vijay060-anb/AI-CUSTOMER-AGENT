@@ -1,0 +1,30 @@
+message,expected_intent
+"I want to cancel my order",cancel_order
+"Can you cancel order 12345 for me?",cancel_order
+"I accidentally ordered the wrong item",change_order
+"I need to add another product to my order",change_order
+"Where is my package right now?",track_order
+"Can you tell me where my order is?",track_order
+"When will my order arrive?",delivery_period
+"How long does shipping usually take?",delivery_period
+"What delivery methods do you offer?",delivery_options
+"I forgot my password",recover_password
+"I can't log into my account because I forgot my password",recover_password
+"I want to change the address for my delivery",change_shipping_address
+"I need to update my shipping address",change_shipping_address
+"I want my money back",get_refund
+"How do I request a refund?",get_refund
+"Where is my refund?",track_refund
+"Has my refund been processed yet?",track_refund
+"What payment methods can I use?",check_payment_methods
+"My payment isn't going through",payment_issue
+"I want to complain about your service",complaint
+"I want to leave feedback about a product",review
+"How do I create an account?",create_account
+"I want to delete my account",delete_account
+"How can I update my account information?",edit_account
+"I want to speak with a real person",contact_human_agent
+"How can I contact customer support?",contact_customer_service
+"How do I get my invoice?",get_invoice
+"I need to check an invoice",check_invoice
+"Can I get a refund for this purchase?",check_refund_policy

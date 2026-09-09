@@ -1,0 +1,30 @@
+message,expected_intent,predicted_intent,confidence,correct
+I want to cancel my order,cancel_order,cancel_order,0.5144385520650897,True
+Can you cancel order 12345 for me?,cancel_order,cancel_order,0.49807989193142194,True
+I accidentally ordered the wrong item,change_order,change_shipping_address,0.13448156686040025,False
+I need to add another product to my order,change_order,change_order,0.3962949507991668,True
+Where is my package right now?,track_order,delivery_period,0.15591975551255025,False
+Can you tell me where my order is?,track_order,delivery_period,0.1471134995904408,False
+When will my order arrive?,delivery_period,delivery_period,0.9619460846066994,True
+How long does shipping usually take?,delivery_period,check_refund_policy,0.42999407511040194,False
+What delivery methods do you offer?,delivery_options,delivery_options,0.9712077692851792,True
+I forgot my password,recover_password,recover_password,0.5984469189064667,True
+I can't log into my account because I forgot my password,recover_password,recover_password,0.7438187901135506,True
+I want to change the address for my delivery,change_shipping_address,change_shipping_address,0.971444091485636,True
+I need to update my shipping address,change_shipping_address,change_shipping_address,0.9523260618087357,True
+I want my money back,get_refund,get_refund,0.7574892435715376,True
+How do I request a refund?,get_refund,get_refund,0.48846770382806415,True
+Where is my refund?,track_refund,track_refund,0.23735510276991614,True
+Has my refund been processed yet?,track_refund,track_refund,0.36076311594331406,True
+What payment methods can I use?,check_payment_methods,check_payment_methods,0.8495879218741895,True
+My payment isn't going through,payment_issue,payment_issue,0.230448190794727,True
+I want to complain about your service,complaint,review,0.49183154081579866,False
+I want to leave feedback about a product,review,review,0.9929938778705767,True
+How do I create an account?,create_account,create_account,0.5434032945443733,True
+I want to delete my account,delete_account,delete_account,0.9123194515379791,True
+How can I update my account information?,edit_account,edit_account,0.5800747787046692,True
+I want to speak with a real person,contact_human_agent,contact_human_agent,0.9418977607189323,True
+How can I contact customer support?,contact_customer_service,contact_customer_service,0.9876707335140131,True
+How do I get my invoice?,get_invoice,get_invoice,0.8493333444799278,True
+I need to check an invoice,check_invoice,check_invoice,0.6560231442315191,True
+Can I get a refund for this purchase?,check_refund_policy,get_refund,0.5621371452183053,False

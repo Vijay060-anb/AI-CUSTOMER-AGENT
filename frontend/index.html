@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SupportAI — Customer Operations</title>
+
+    <meta
+        name="description"
+        content="AI-powered customer support and operations assistant."
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/static/favicon.ico"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Logo -->
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    AI
+                </div>
+
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        SupportAI
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Customer Operations
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Agent Status -->
+
+            <div class="agent-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    AI Agent Online
+                </span>
+
+            </div>
+
+
+            <!-- Capabilities -->
+
+            <div class="sidebar-section">
+
+                <h2>
+                    Capabilities
+                </h2>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('Where is my order?')"
+                >
+
+                    <span class="capability-icon">
+                        📦
+                    </span>
+
+                    <span class="capability-name">
+                        Order Tracking
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('I have a payment problem')"
+                >
+
+                    <span class="capability-icon">
+                        💳
+                    </span>
+
+                    <span class="capability-name">
+                        Payment Support
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('I want to request a refund')"
+                >
+
+                    <span class="capability-icon">
+                        💰
+                    </span>
+
+                    <span class="capability-name">
+                        Refund Support
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('I need help with my account')"
+                >
+
+                    <span class="capability-icon">
+                        👤
+                    </span>
+
+                    <span class="capability-name">
+                        Account Support
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('I need help with shipping')"
+                >
+
+                    <span class="capability-icon">
+                        🚚
+                    </span>
+
+                    <span class="capability-name">
+                        Shipping Support
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="capability"
+                    onclick="sendQuickMessage('I want to speak to a human agent')"
+                >
+
+                    <span class="capability-icon">
+                        🧑‍💼
+                    </span>
+
+                    <span class="capability-name">
+                        Human Escalation
+                    </span>
+
+                    <span class="capability-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar Footer -->
+
+            <div class="sidebar-footer">
+
+                <div>
+                    Powered by
+                </div>
+
+                <strong>
+                    Python · FastAPI · AI · n8n
+                </strong>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN APPLICATION
+        ================================================== -->
+
+        <main class="main">
+
+
+            <!-- Header -->
+
+            <header class="chat-header">
+
+                <div>
+
+                    <h1>
+                        AI Customer Support
+                    </h1>
+
+                    <p>
+                        How can we help you today?
+                    </p>
+
+                </div>
+
+
+                <div class="online-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Online
+                    </span>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- Customer Information -->
+
+            <section class="customer-info">
+
+                <div class="input-group">
+
+                    <label
+                        for="customerName"
+                    >
+                        Customer Name
+                    </label>
+
+                    <input
+                        id="customerName"
+                        type="text"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label
+                        for="orderId"
+                    >
+                        Order ID
+                    </label>
+
+                    <input
+                        id="orderId"
+                        type="text"
+                        placeholder="e.g. 10002"
+                    >
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Chat -->
+
+            <section
+                id="chatMessages"
+                class="chat-messages"
+            >
+
+
+                <!-- Initial AI Message -->
+
+                <div class="message agent-message">
+
+                    <div class="avatar">
+                        AI
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-name">
+                            SupportAI
+                        </div>
+
+                        <div class="bubble">
+
+                            Hello! 👋 I'm your AI customer
+                            support assistant.
+
+                            <br><br>
+
+                            I can help with orders, refunds,
+                            payments, accounts, shipping,
+                            and more.
+
+                            <br><br>
+
+                            What can I help you with?
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Quick Actions -->
+
+            <div class="quick-actions">
+
+                <button
+                    type="button"
+                    class="quick-button"
+                    onclick="sendQuickMessage('Where is my order?')"
+                >
+                    📦 Track my order
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-button"
+                    onclick="sendQuickMessage('I want to request a refund')"
+                >
+                    💰 Request a refund
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-button"
+                    onclick="sendQuickMessage('I have a payment problem')"
+                >
+                    💳 Payment issue
+                </button>
+
+
+                <button
+                    type="button"
+                    class="quick-button"
+                    onclick="sendQuickMessage('I want to speak to a human agent')"
+                >
+                    🧑‍💼 Talk to an agent
+                </button>
+
+            </div>
+
+
+
+            <!-- Message Input -->
+
+            <div class="message-form">
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    id="sendButton"
+                    type="button"
+                    onclick="sendMessage()"
+                >
+                    Send
+                </button>
+
+            </div>
+
+
+
+            <!-- Disclaimer -->
+
+            <div class="disclaimer">
+
+                AI-generated support assistant
+                · Please do not share sensitive information.
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script
+        src="/static/app.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

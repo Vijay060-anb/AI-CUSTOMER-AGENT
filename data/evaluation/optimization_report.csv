@@ -1,0 +1,6 @@
+priority,area,recommendation
+HIGH,Confidence Routing,Continue routing low-confidence ML predictions to the AI reasoning layer.
+HIGH,Intent Classification,Add more real-world examples for the intents involved in ML failures.
+HIGH,Hybrid Routing,Keep the hybrid ML + AI architecture because the AI layer successfully recovers some ML classification errors.
+MEDIUM,Evaluation,"Expand the real-world evaluation set with ambiguous, short, and conversational customer messages."
+LOW,Monitoring,"Track intent accuracy, confidence, AI fallback rate, and failure patterns after deployment."
